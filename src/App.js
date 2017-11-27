@@ -30,6 +30,14 @@ class App extends Component {
     });
   };
 
+  removeAllDrinks = () => {
+    if(window.confirm('Really wanna start drinking again?')) {
+      this.setState({
+        drinks: []
+      });
+    }
+  }
+
   render() {
     const { drinks } = this.state;
     const last = drinks[drinks.length - 1] || new Date().getTime();
@@ -41,6 +49,7 @@ class App extends Component {
           <img src="./imgs/beer.svg" alt="" />
         </button>
         <p className="drink-count">{this.state.drinks.length}</p>
+        <button className="remove-drinks" onClick={this.removeAllDrinks}>Remove drinks...</button>
       </main>
     );
   }
