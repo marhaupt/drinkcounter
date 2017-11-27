@@ -6,8 +6,18 @@ class App extends Component {
     drinks: []
   };
 
+  componentDidMount() {
+    const localStorageRef = localStorage.getItem('drinks');
+
+    if (localStorageRef) {
+      this.setState({
+        drinks: JSON.parse(localStorageRef)
+      });
+    }
+  }
+
   componentWillUpdate(nextProps, nextState) {
-    console.log(nextState);
+    localStorage.setItem('drinks', JSON.stringify(nextState.drinks));
   }
 
   addDrink = _ => {
