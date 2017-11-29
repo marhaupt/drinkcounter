@@ -34,12 +34,12 @@ class App extends Component {
   };
 
   removeAllDrinks = () => {
-    if(window.confirm('Really wanna start drinking again?')) {
+    if (window.confirm('Really wanna start drinking again?')) {
       this.setState({
         drinks: []
       });
     }
-  }
+  };
 
   render() {
     const { drinks } = this.state;
@@ -47,8 +47,8 @@ class App extends Component {
 
     return (
       <main>
-        <Timer lastDrink={last} howMany={drinks.length}/>
-        <ButtonAddDrink addDrink={this.addDrink}/>
+        <Timer lastDrink={last} howMany={drinks.length} />
+        <ButtonAddDrink addDrink={this.addDrink} />
         <DrinkCounter numberOfDrinks={this.state.drinks.length} />
         <ButtonRemoveDrinks removeAllDrinks={this.removeAllDrinks} />
       </main>
