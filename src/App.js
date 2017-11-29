@@ -42,6 +42,18 @@ class App extends Component {
     }
   };
 
+  removeDrink = key => {
+    const { drinks } = this.state;
+
+    const index = drinks.indexOf(key);
+    drinks.splice(index, 1);
+    const updatedDrinks = drinks;
+
+    this.setState({
+      drinks: updatedDrinks
+    });
+  };
+
   render() {
     const { drinks } = this.state;
     const last = drinks[drinks.length - 1] || new Date().getTime();
@@ -52,7 +64,7 @@ class App extends Component {
         <ButtonAddDrink addDrink={this.addDrink} />
         <DrinkCounter numberOfDrinks={this.state.drinks.length} />
         <ButtonRemoveDrinks removeAllDrinks={this.removeAllDrinks} />
-        <DrinkList drinks={this.state.drinks} />
+        <DrinkList drinks={this.state.drinks} removeDrink={this.removeDrink} />
       </main>
     );
   }

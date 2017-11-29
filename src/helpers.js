@@ -21,3 +21,11 @@ export const prettyPrintTime = miliseconds => {
 
   return miliseconds ? result : false;
 };
+
+export const printShortTime = miliseconds => {
+  const seconds = Math.round(miliseconds / 1000);
+  const minutes = Math.round(seconds / 60);
+  // const hours = Math.floor(minutes / 60);
+
+  return minutes > 0 ? minutes + ' min' : seconds + ' s';
+};
