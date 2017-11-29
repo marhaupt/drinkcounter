@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import Timer from './components/Timer'
+import Timer from './components/Timer';
+import ButtonAddDrink from './components/ButtonAddDrink';
+import ButtonRemoveDrinks from './components/ButtonRemoveDrinks';
+import DrinkCounter from './components/DrinkCounter';
 
 class App extends Component {
   state = {
@@ -45,11 +48,9 @@ class App extends Component {
     return (
       <main>
         <Timer lastDrink={last} howMany={drinks.length}/>
-        <button className="drink-button" onClick={this.addDrink} aria-label="add drink">
-          <img src="./imgs/beer.svg" alt="" />
-        </button>
-        <p className="drink-count">{this.state.drinks.length}</p>
-        <button className="remove-drinks" onClick={this.removeAllDrinks} aria-label="remove drinks">Remove drinks...</button>
+        <ButtonAddDrink addDrink={this.addDrink}/>
+        <DrinkCounter numberOfDrinks={this.state.drinks.length} />
+        <ButtonRemoveDrinks removeAllDrinks={this.removeAllDrinks} />
       </main>
     );
   }
