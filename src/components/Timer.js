@@ -23,7 +23,9 @@ class Timer extends Component {
   render() {
     return (
       <p className="drinking-time">
-        {this.props.howMany === 0 ? 'Order something!' : prettyPrintTime(this.state.drinkingTime)}
+        {this.props.howMany === 0
+          ? 'Order something!'
+          : prettyPrintTime(this.state.drinkingTime)}
       </p>
     );
   }

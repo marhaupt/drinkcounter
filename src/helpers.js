@@ -19,5 +19,5 @@ export const prettyPrintTime = miliseconds => {
     result = `${seconds} s`;
   }
 
-  return miliseconds ?  result : false
-}
+  return miliseconds ? result : false;
+};
