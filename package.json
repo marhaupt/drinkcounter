@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "npm-run-all": "^4.1.2",
+    "onchange": "^3.2.1",
     "prettier": "^1.8.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
@@ -10,7 +12,9 @@
   },
   "scripts": {
     "prettier": "prettier --config ./.prettierrc --write ./src/**/*.*",
-    "start": "react-scripts start",
+    "prettier-watch": "onchange \"./src/**/*.*\" -- prettier --write {{changed}}",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p prettier-watch start-js",
     "build": "react-scripts build && surge build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
