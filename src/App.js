@@ -3,6 +3,7 @@ import Timer from './components/Timer';
 import ButtonAddDrink from './components/ButtonAddDrink';
 import ButtonRemoveDrinks from './components/ButtonRemoveDrinks';
 import DrinkCounter from './components/DrinkCounter';
+import DrinkList from './components/DrinkList';
 
 class App extends Component {
   state = {
@@ -51,6 +52,7 @@ class App extends Component {
         <ButtonAddDrink addDrink={this.addDrink} />
         <DrinkCounter numberOfDrinks={this.state.drinks.length} />
         <ButtonRemoveDrinks removeAllDrinks={this.removeAllDrinks} />
+        <DrinkList drinks={this.state.drinks} />
       </main>
     );
   }

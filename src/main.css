@@ -57,3 +57,18 @@ p {
   font-size: 2em;
   color: #999;
 }
+
+.drink-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.drink-list li {
+  margin: 0.5em;
+}
+
+.small-drink {
+  height: 1.5em;
+}
